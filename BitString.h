@@ -74,7 +74,7 @@ public:
 		return *this;
 	}
 
-	BitString operator~()
+	BitString operator~() const
 	{
 		BitString result;
 		result.m_data[0] = ~m_data[0];

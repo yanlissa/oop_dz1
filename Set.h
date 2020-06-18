@@ -44,5 +44,48 @@ public:
 		return *this;
 	}
 
+	Set& merge(const Set& s)
+	{
+		m_data |= s.m_data;
+		return *this;
+	}
+
+	Set& intersect(const Set& s)
+	{
+		m_data &= s.m_data;
+		return *this;
+	}
+
+	Set& subtract(const Set& s)
+	{
+		m_data &= ~(s.m_data);
+		return *this;
+	}
+
+	std::size_t power() const
+	{
+		BitString bs(1);
+		std::size_t power = 0;
+		for (int i = 0; i < 64; i++) {
+			if ((m_data & bs) == bs) {
+				power++;
+			}
+			bs <<= 1;
+		}
+		return power;
+	}
+
+	bool is_empty() const
+	{
+		BitString bs(1);
+		for (int i = 0; i < 64; i++) {
+			if ((m_data & bs) == bs) {
+				return false;
+			}
+			bs <<= 1;
+		}
+		return true;
+	}
+
 	friend std::ostream& operator <<(std::ostream& out, const Set& s);
 };
