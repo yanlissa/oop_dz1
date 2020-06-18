@@ -118,5 +118,15 @@ public:
 		return result;
 	}
 
+	friend bool operator ==(const BitString& x, const BitString& y)
+	{
+		return x.m_data[0] == y.m_data[0] && x.m_data[1] == y.m_data[1];
+	}
+
+	friend bool operator !=(const BitString& x, const BitString& y)
+	{
+		return x.m_data[0] != y.m_data[0] || x.m_data[1] != y.m_data[1];
+	}
+
 	friend std::ostream& operator <<(std::ostream& out, const BitString& bstr);
 };

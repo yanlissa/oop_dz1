@@ -16,5 +16,6 @@ int main()
 	cout << (~b0 & b0) << endl;
 	cout << (b32 | b0) << endl;
 	cout << (b0 << 32) << endl;
+	cout << (b0 << 32 == b32) << endl;
 	return 0;
 }
