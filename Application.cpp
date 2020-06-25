@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include "Application.h"
-#include "Set.h"
 
 using namespace std;
 
@@ -63,11 +62,24 @@ void Application::TestAll()
 	cout << "a - a " << (s.is_empty() ? "=" : "≠") << " ∅ \n";
 }
 
+void Application::AddToA()
+{
+	unsigned int num = 64;
+	while (num > 63) {
+		cout << "Введите целое 0..63: ";
+		cin >> num;
+		cout << num << endl;
+	}
+	m_a.add(num);
+}
+
 void Application::PrintMenu()
 {
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "A: " << m_a << endl;
 	cout << "0: Выход" << endl;
 	cout << "1: Отладочный вывод" << endl;
+	cout << "2: Добавить элемент в A" << endl;
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "Выберите пункт: ";
 }
@@ -89,6 +101,7 @@ void Application::Run()
 			TestAll();
 			break;
 		case 2:
+			AddToA();
 			break;
 		default:
 			break;
