@@ -110,9 +110,9 @@ void Application::SubtractBfromA()
 void Application::PrintMenu()
 {
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-	cout << "A: " << m_a << endl;
+	cout << "A: " << m_a << ", |A| = " << m_a.power() << endl;
 	cout << "B: " << m_b << endl;
-	cout << "C: " << m_c << endl;
+	cout << "C: " << m_c << ", |C| = " << m_c.power() << endl;
 	cout << "0: Выход" << endl;
 	cout << "1: Отладочный вывод" << endl;
 	cout << "2: Добавить элемент в A" << endl;
