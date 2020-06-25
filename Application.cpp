@@ -95,6 +95,12 @@ void Application::MergeAandB()
 	m_c.merge(m_b);
 }
 
+void Application::IntersectAandB()
+{
+	m_c = m_a;
+	m_c.intersect(m_b);
+}
+
 void Application::PrintMenu()
 {
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
@@ -107,6 +113,7 @@ void Application::PrintMenu()
 	cout << "3: Исключить элемент из A" << endl;
 	cout << "4: Скопировать A в B" << endl;
 	cout << "5: C = A ∪ B" << endl;
+	cout << "6: C = A ∩ B" << endl;
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "Выберите пункт: ";
 }
@@ -138,6 +145,9 @@ void Application::Run()
 			break;
 		case 5:
 			MergeAandB();
+			break;
+		case 6:
+			IntersectAandB();
 			break;
 		default:
 			break;

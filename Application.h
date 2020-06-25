@@ -13,6 +13,7 @@ private:
 	void RemoveFromA();
 	void CopyAToB();
 	void MergeAandB();
+	void IntersectAandB();
 public:
 	Application()
 	{};
