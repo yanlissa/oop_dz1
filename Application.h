@@ -8,6 +8,7 @@ private:
 	void PrintMenu();
 	void TestAll();
 	void AddToA();
+	void RemoveFromA();
 public:
 	Application()
 	{};
