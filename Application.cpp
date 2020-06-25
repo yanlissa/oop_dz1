@@ -89,16 +89,24 @@ void Application::CopyAToB()
 	m_b = m_a;
 }
 
+void Application::MergeAandB()
+{
+	m_c = m_a;
+	m_c.merge(m_b);
+}
+
 void Application::PrintMenu()
 {
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "A: " << m_a << endl;
 	cout << "B: " << m_b << endl;
+	cout << "C: " << m_c << endl;
 	cout << "0: Выход" << endl;
 	cout << "1: Отладочный вывод" << endl;
 	cout << "2: Добавить элемент в A" << endl;
 	cout << "3: Исключить элемент из A" << endl;
 	cout << "4: Скопировать A в B" << endl;
+	cout << "5: C = A ∪ B" << endl;
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "Выберите пункт: ";
 }
@@ -127,6 +135,9 @@ void Application::Run()
 			break;
 		case 4:
 			CopyAToB();
+			break;
+		case 5:
+			MergeAandB();
 			break;
 		default:
 			break;
