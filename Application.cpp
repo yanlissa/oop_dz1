@@ -84,14 +84,21 @@ void Application::RemoveFromA()
 	m_a.remove(num);
 }
 
+void Application::CopyAToB()
+{
+	m_b = m_a;
+}
+
 void Application::PrintMenu()
 {
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "A: " << m_a << endl;
+	cout << "B: " << m_b << endl;
 	cout << "0: Выход" << endl;
 	cout << "1: Отладочный вывод" << endl;
 	cout << "2: Добавить элемент в A" << endl;
 	cout << "3: Исключить элемент из A" << endl;
+	cout << "4: Скопировать A в B" << endl;
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "Выберите пункт: ";
 }
@@ -117,6 +124,9 @@ void Application::Run()
 			break;
 		case 3:
 			RemoveFromA();
+			break;
+		case 4:
+			CopyAToB();
 			break;
 		default:
 			break;
