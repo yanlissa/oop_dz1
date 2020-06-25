@@ -53,8 +53,8 @@ void Application::TestAll()
 
 	s = a;
 	s.subtract(b);
-	cout << " a - b = " << s << endl;
-	cout << "|a - b|= " << s.power() << endl;
+	cout << " a \\ b = " << s << endl;
+	cout << "|a \\ b|= " << s.power() << endl;
 
 	cout << "a " << (a.is_empty() ? "=" : "≠") << " ∅ \n";
 	s = a;
@@ -101,6 +101,12 @@ void Application::IntersectAandB()
 	m_c.intersect(m_b);
 }
 
+void Application::SubtractBfromA()
+{
+	m_c = m_a;
+	m_c.subtract(m_b);
+}
+
 void Application::PrintMenu()
 {
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
@@ -114,6 +120,7 @@ void Application::PrintMenu()
 	cout << "4: Скопировать A в B" << endl;
 	cout << "5: C = A ∪ B" << endl;
 	cout << "6: C = A ∩ B" << endl;
+	cout << "7: C = A \\ B" << endl;
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "Выберите пункт: ";
 }
@@ -148,6 +155,9 @@ void Application::Run()
 			break;
 		case 6:
 			IntersectAandB();
+			break;
+		case 7:
+			SubtractBfromA();
 			break;
 		default:
 			break;

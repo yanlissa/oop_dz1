@@ -14,6 +14,7 @@ private:
 	void CopyAToB();
 	void MergeAandB();
 	void IntersectAandB();
+	void SubtractBfromA();
 public:
 	Application()
 	{};
